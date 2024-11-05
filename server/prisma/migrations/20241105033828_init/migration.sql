@@ -24,9 +24,6 @@ CREATE TABLE "_ClassroomToStudent" (
 );
 
 -- CreateIndex
-CREATE UNIQUE INDEX "student_email_key" ON "student"("email");
-
--- CreateIndex
 CREATE UNIQUE INDEX "_ClassroomToStudent_AB_unique" ON "_ClassroomToStudent"("A", "B");
 
 -- CreateIndex
