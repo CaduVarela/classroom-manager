@@ -1,8 +1,20 @@
+#####
 POST http://localhost:3000/api/classroom HTTP/1.1
 content-type: application/json
 
 {
   "name": "Sample New Classroom"
+}
+
+#####
+POST http://localhost:3000/api/classroom HTTP/1.1
+content-type: application/json
+
+{
+  "name": "Sample New Classroom",
+  "$connect": {
+    "students": [2]
+  }
 }
 
 #####
@@ -25,4 +37,18 @@ content-type: application/json
 
 {
   "name": "Updated Classroom"
+}
+
+#####
+PUT http://localhost:3000/api/classroom/{{target}} HTTP/1.1
+content-type: application/json
+
+{
+  "name": "Updated Classroom",
+  "$connect": {
+    "students": [1, 2, 3]
+  },
+  "$disconnect": {
+    "students": [2]
+  }
 }

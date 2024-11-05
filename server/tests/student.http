@@ -1,9 +1,22 @@
+#####
 POST http://localhost:3000/api/student HTTP/1.1
 content-type: application/json
 
 {
   "name": "Sample Student",
   "email": "sample@student.com"
+}
+
+#####
+POST http://localhost:3000/api/student HTTP/1.1
+content-type: application/json
+
+{
+  "name": "Sample Student",
+  "email": "sample@student.com",
+  "$connect": {
+    "classrooms": [2]
+  }
 }
 
 #####
@@ -26,4 +39,18 @@ content-type: application/json
 
 {
   "name": "Updated Student"
+}
+
+#####
+PUT http://localhost:3000/api/student/{{target}} HTTP/1.1
+content-type: application/json
+
+{
+  "name": "Updated Student",
+  "$connect": {
+    "classrooms": [2]
+  },
+  "$disconnect": {
+    "classrooms": [1, 3]
+  }
 }
