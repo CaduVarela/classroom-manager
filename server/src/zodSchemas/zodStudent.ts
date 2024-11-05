@@ -4,7 +4,9 @@ export const zodStudentCreate = z.object({
     body: z.object({
         name: z.string(),
         email: z.string().email(),
-        classrooms: z.number().array().optional(),
+        $connect: z.object({
+            classrooms: z.number().array().optional(),
+        }).strict().optional(),
     }).strict(),
 });
 

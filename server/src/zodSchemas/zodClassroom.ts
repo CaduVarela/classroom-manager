@@ -3,7 +3,9 @@ import { z } from "zod";
 export const zodClassroomCreate = z.object({
     body: z.object({
         name: z.string(),
-        students: z.number().array().optional(),
+        $connect: z.object({
+            students: z.number().array().optional(),
+        }).strict().optional(),
     }).strict(),
 });
 
