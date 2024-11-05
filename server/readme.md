@@ -1,10 +1,10 @@
-# API de Gerenciamento
+# 🎷💀 API - Gerenciamento de alunos e salas de aula
 
-Esta API fornece endpoints para operações de criação, leitura, atualização e exclusão de registros, além de gerenciar associações entre diferentes entidades. Utiliza o Prisma para interações com o banco de dados e Zod para validação dos dados de entrada.
+Esta API oferece endpoints para operações de criação, leitura, atualização e exclusão de registros, além de gerenciar associações entre diferentes entidades. Utiliza o **Prisma** para interações com o banco de dados e **Zod** para validação dos dados de entrada.
 
-## Configuração Inicial
+## 🚀 Configuração Inicial
 
-### Instalação
+### 📦 Instalação
 
 1. Instale as dependências:
 
@@ -14,7 +14,7 @@ Esta API fornece endpoints para operações de criação, leitura, atualização
 
 2. (Opcional) Crie um arquivo `.env` e configure as variáveis de ambiente `PORT` e as credenciais do banco de dados para o Prisma.
 
-### Executando o Servidor
+### 🖥️ Executando o Servidor
 
 Para iniciar o servidor, execute:
 
@@ -24,17 +24,17 @@ yarn dev
 
 O servidor será iniciado em `http://localhost:3000` por padrão ou de acordo com o valor da variável `PORT` definida no `.env`.
 
-## Estrutura de Rotas
+## 📂 Estrutura de Rotas
 
 A API segue a estrutura REST com prefixo `/api` para os endpoints principais:
 
-- `/api/entity`: Endpoints para gerenciar entidades (ex: studant, classroom).
+- `/api/entity`: Endpoints para gerenciar entidades (ex: student, classroom).
 
-## Endpoints
+## 🛠️ Endpoints
 
 ### Entity Endpoints
 
-#### Criar Entidade
+#### ✏️ Criar Entidade
 
 **POST** `/api/entity`
 
@@ -62,7 +62,7 @@ A API segue a estrutura REST com prefixo `/api` para os endpoints principais:
     }
     ```
 
-#### Listar Entidades
+#### 📜 Listar Entidades
 
 **GET** `/api/entity`
 
@@ -91,7 +91,7 @@ A API segue a estrutura REST com prefixo `/api` para os endpoints principais:
     }
     ```
 
-    #### **Utilizando os Parâmetros `filters` e `orderBy`**
+    #### 🔍 **Utilizando os Parâmetros `filters` e `orderBy`**
 
     Os parâmetros `filters` e `orderBy` permitem personalizar a busca de entidades retornadas pela API, possibilitando a filtragem e a ordenação dos resultados.
 
@@ -125,7 +125,7 @@ A API segue a estrutura REST com prefixo `/api` para os endpoints principais:
     GET /api/entity?orderBy={"createdAt":"desc"}
     ```
 
-    ### Exemplo Combinado
+    ### 🔗 Exemplo Combinado
 
     Você pode combinar ambos os parâmetros na mesma requisição para filtrar e ordenar ao mesmo tempo. Por exemplo:
 
@@ -135,7 +135,7 @@ A API segue a estrutura REST com prefixo `/api` para os endpoints principais:
 
     Essa requisição retornará as entidades cujo nome contém "Example", ordenadas pela data de criação em ordem crescente.
 
-#### Buscar Entidade por ID
+#### 🔍 Buscar Entidade por ID
 
 **GET** `/api/entity/:id`
 
@@ -152,7 +152,7 @@ A API segue a estrutura REST com prefixo `/api` para os endpoints principais:
     }
     ```
 
-#### Atualizar Entidade
+#### ✏️ Atualizar Entidade
 
 **PUT** `/api/entity/:id`
 
@@ -179,7 +179,7 @@ A API segue a estrutura REST com prefixo `/api` para os endpoints principais:
     }
     ```
 
-#### Deletar Entidade
+#### ❌ Deletar Entidade
 
 **DELETE** `/api/entity/:id`
 
@@ -194,15 +194,15 @@ A API segue a estrutura REST com prefixo `/api` para os endpoints principais:
     }
     ```
 
-## Validação de Dados e Tratamento de Erros
+## ⚠️ Validação de Dados e Tratamento de Erros
 
-A API utiliza o Zod para validação dos dados de entrada. Nos endpoints de criação e atualização de entidades, são usados os esquemas correspondentes. Caso os dados sejam inválidos, a API retorna um erro `400 Bad Request` com detalhes sobre a validação.
+A API utiliza o **Zod** para validação dos dados de entrada. Nos endpoints de criação e atualização de entidades, são usados os esquemas correspondentes. Caso os dados sejam inválidos, a API retorna um erro `400 Bad Request` com detalhes sobre a validação.
 
-### Erros Comuns
+### ❗ Erros Comuns
 
 - **400 Bad Request**: Dados de entrada inválidos ou registro não encontrado.
 - **500 Internal Server Error**: Erro interno do servidor; consulte os logs para mais informações.
 
 ---
 
-Esta documentação cobre a configuração inicial, estrutura dos endpoints e exemplos de uso. Para mais detalhes sobre Prisma e Zod, consulte as documentações oficiais dessas ferramentas.
+Esta documentação cobre a configuração inicial, estrutura dos endpoints e exemplos de uso. Para mais detalhes sobre **Prisma** e **Zod**, consulte as documentações oficiais dessas ferramentas.
