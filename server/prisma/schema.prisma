@@ -11,7 +11,7 @@ datasource db {
 model Classroom {
   id        Int       @id @default(autoincrement())
   name      String
-  students  Student[] @relation("classroomStudents")
+  students  Student[]
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
 
@@ -22,7 +22,7 @@ model Student {
   id         Int         @id @default(autoincrement())
   name       String
   email      String      @unique
-  classrooms Classroom[] @relation("classroomStudents")
+  classrooms Classroom[]
   createdAt  DateTime    @default(now())
   updatedAt  DateTime    @updatedAt
 

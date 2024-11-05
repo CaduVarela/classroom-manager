@@ -16,18 +16,18 @@ CREATE TABLE "student" (
 );
 
 -- CreateTable
-CREATE TABLE "_classroomStudents" (
+CREATE TABLE "_ClassroomToStudent" (
     "A" INTEGER NOT NULL,
     "B" INTEGER NOT NULL,
-    CONSTRAINT "_classroomStudents_A_fkey" FOREIGN KEY ("A") REFERENCES "classroom" ("id") ON DELETE CASCADE ON UPDATE CASCADE,
-    CONSTRAINT "_classroomStudents_B_fkey" FOREIGN KEY ("B") REFERENCES "student" ("id") ON DELETE CASCADE ON UPDATE CASCADE
+    CONSTRAINT "_ClassroomToStudent_A_fkey" FOREIGN KEY ("A") REFERENCES "classroom" ("id") ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT "_ClassroomToStudent_B_fkey" FOREIGN KEY ("B") REFERENCES "student" ("id") ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 -- CreateIndex
 CREATE UNIQUE INDEX "student_email_key" ON "student"("email");
 
 -- CreateIndex
-CREATE UNIQUE INDEX "_classroomStudents_AB_unique" ON "_classroomStudents"("A", "B");
+CREATE UNIQUE INDEX "_ClassroomToStudent_AB_unique" ON "_ClassroomToStudent"("A", "B");
 
 -- CreateIndex
-CREATE INDEX "_classroomStudents_B_index" ON "_classroomStudents"("B");
+CREATE INDEX "_ClassroomToStudent_B_index" ON "_ClassroomToStudent"("B");
