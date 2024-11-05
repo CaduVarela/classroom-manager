@@ -11,16 +11,20 @@ datasource db {
 model Classroom {
   id        Int       @id @default(autoincrement())
   name      String
-  students  Student[]
+  students  Student[] @relation("classroomStudents")
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
+
+  @@map("classroom")
 }
 
 model Student {
   id         Int         @id @default(autoincrement())
   name       String
   email      String      @unique
-  classrooms Classroom[]
+  classrooms Classroom[] @relation("classroomStudents")
   createdAt  DateTime    @default(now())
   updatedAt  DateTime    @updatedAt
+
+  @@map("student")
 }
